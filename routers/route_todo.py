@@ -38,7 +38,7 @@ async def create_todo(request: Request, response: Response, data: TodoBody, csrf
 #タスクの一覧を取得するエンドポイント
 @router.get("/api/todo", response_model=List[Todo])
 async def get_todos(request: Request):
-    # auth.verify_jwt(request) #Renderにデプロイする為にコメントアウト
+    auth.verify_jwt(request) #Renderにデプロイする際にコメントアウト
     res = await db_get_todos()
     return res
 
