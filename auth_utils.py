@@ -51,6 +51,7 @@ class AuthJwtCsrf():
                 detail="No JWT exist: may not set yet or deleted"
             )
         _, _, value = token.partition(" ")
+        subject = self.decode_jwt(value)
         return subject
 
     #jwtの検証と更新を同時に行う
