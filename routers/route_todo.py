@@ -54,7 +54,7 @@ async def get_single_todo(request: Request, response: Response, id: str):
     )
     if res:
         return res
-    raise HTTPException(status_code=404, detail=f"Task of id {id} does't exist")
+    raise HTTPException(status_code=404, detail=f"Task of ID:{id} does't exist")
 
 #アップデート更新するエンドポイント
 @router.put("/api/todo/{id}", response_model=Todo)
