@@ -12,7 +12,7 @@ app = FastAPI()
 app.include_router(route_todo.router)
 app.include_router(route_auth.router)
 #white list （本番環境では変更する）
-origins = ['http://localhost:3000','https://demo-fastapi3.onrender.com']
+origins = ['http://localhost:3000','https://fastapi-third.web.app']
 #corsの設定
 app.add_middleware(
     CORSMiddleware,
